@@ -4,6 +4,8 @@ import ProfileRoutes from './src/profile/route';
 
 dotenv.config();
 
+import './src/libs/sequelize';
+
 const app = express();
 app.use(express.json());
 
