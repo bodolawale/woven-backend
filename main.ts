@@ -1,0 +1,10 @@
+import app from './app';
+
+const processPort = process.env.PORT || '3000';
+const PORT = parseInt(processPort, 0);
+
+const ENV = process.env.NODE_ENV || 'development';
+
+app.listen(PORT, () => {
+  console.log(`App running in ${ENV} mode on port ${PORT}`);
+});
