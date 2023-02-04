@@ -37,3 +37,9 @@ export function errorHandler(err: any, req: Request, res: Response, next: NextFu
   }
   next();
 }
+
+export function catchAsync(controllerFunction: any) {
+  return (req: Request, res: Response, next: NextFunction) => {
+    controllerFunction(req, res, next).catch(next);
+  };
+}

@@ -10,7 +10,7 @@ app.use(express.json());
 app.use('/api/profile', ProfileRoutes);
 
 function errorHandler(err: any, req: Request, res: Response, next: NextFunction) {
-  res.status(500).send({
+  res.status(400).send({
     message: 'An error occurred while processing this request',
     data: err.toString()
   });
