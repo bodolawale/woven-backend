@@ -1,5 +1,5 @@
 const profileTypeTableName = 'profile_types';
-const profileTableName = 'profile';
+const profileTableName = 'profiles';
 const profileTypes = [
   { id: 1, name: 'CLIENT' },
   { id: 2, name: 'CONTRACTOR' }
@@ -59,11 +59,13 @@ async function createProfileTable(queryInterface, DataTypes, transaction) {
       },
       created_at: {
         type: DataTypes.DATE,
-        allowNull: false
+        allowNull: false,
+        defaultValue: DataTypes.fn('NOW')
       },
       updated_at: {
         type: DataTypes.DATE,
-        allowNull: false
+        allowNull: false,
+        defaultValue: DataTypes.fn('NOW')
       }
     },
     { transaction }

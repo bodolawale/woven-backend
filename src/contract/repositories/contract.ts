@@ -23,9 +23,9 @@ export class ContractRepository {
   }
 
   async getContracts(callerId: number): Promise<ContractData[]> {
-    const contracts = await Contract.find({
+    const contracts = await Contract.findAll({
       where: {
-        [Op.or]: [{ client_id: callerId, contractor_id: callerId }],
+        [Op.or]: [{ client_id: callerId }, { contractor_id: callerId }],
         status_id: { [Op.ne]: CONTRACT_STATUSES.TERMINATED }
       }
     });

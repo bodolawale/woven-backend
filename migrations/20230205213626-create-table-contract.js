@@ -1,5 +1,5 @@
 const contractStatusTableName = 'contract_statuses';
-const contractTableName = 'contract';
+const contractTableName = 'contracts';
 const contractStatuses = [
   { id: 1, name: 'NEW' },
   { id: 2, name: 'PROGRESS' },
@@ -62,11 +62,13 @@ async function createContractTable(queryInterface, DataTypes, transaction) {
       },
       created_at: {
         type: DataTypes.DATE,
-        allowNull: false
+        allowNull: false,
+        defaultValue: DataTypes.fn('NOW')
       },
       updated_at: {
         type: DataTypes.DATE,
-        allowNull: false
+        allowNull: false,
+        defaultValue: DataTypes.fn('NOW')
       }
     },
     { transaction }
