@@ -1,5 +1,6 @@
 import { Sequelize, DataTypes } from 'sequelize';
 import ProfileModels from '../profile/models';
+import ContractModels from '../contract/models';
 
 const dbUrl = process.env.SQL_DB_URL ?? '';
 
@@ -27,7 +28,7 @@ sequelize
     console.error(err);
   });
 
-const modulesModels: any[] = [ProfileModels];
+const modulesModels = [ProfileModels, ContractModels];
 
 modulesModels.forEach(moduleModels => {
   try {
