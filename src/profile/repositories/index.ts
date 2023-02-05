@@ -1,1 +1,1 @@
-export { ProfileRepository } from './profile';
+export { ProfileRepository, ProfileData } from './profile';
