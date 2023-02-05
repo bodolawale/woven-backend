@@ -2,13 +2,16 @@ import express, { Request, Response, NextFunction } from 'express';
 import dotenv from 'dotenv';
 dotenv.config();
 
-import ProfileRoutes from './src/profile/route';
 import './src/libs/sequelize';
+
+import ProfileRoutes from './src/profile/route';
+import ContractRoutes from './src/contract/route';
 
 const app = express();
 app.use(express.json());
 
-app.use('/api/profile', ProfileRoutes);
+app.use('/api/profiles', ProfileRoutes);
+app.use('/api/contracts', ContractRoutes);
 
 function errorHandler(err: any, req: Request, res: Response, next: NextFunction) {
   res.status(400).send({
