@@ -4,6 +4,7 @@
   "description": "Backend Assessment",
   "main": "main.ts",
   "scripts": {
+    "prestart:dev": "npm run migration:run",
     "start:dev": "ts-node main.ts",
     "migration:generate": "npx sequelize-cli migration:generate --name",
     "migration:run": "npx sequelize-cli db:migrate",

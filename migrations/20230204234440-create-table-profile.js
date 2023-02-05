@@ -46,15 +46,16 @@ async function createProfileTable(queryInterface, DataTypes, transaction) {
         type: DataTypes.STRING(50),
         allowNull: false
       },
-      type_id: {
+      profile_type_id: {
         type: DataTypes.INTEGER,
+        allowNull: false,
         references: {
           model: profileTypeTableName,
           key: 'id'
         }
       },
       password_hash: {
-        type: DataTypes.STRING
+        type: DataTypes.TEXT
       },
       created_at: {
         type: DataTypes.DATE,

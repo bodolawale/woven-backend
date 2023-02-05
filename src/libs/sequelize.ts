@@ -1,4 +1,5 @@
-import { Sequelize } from 'sequelize';
+import { Sequelize, DataTypes } from 'sequelize';
+import ProfileModels from '../profile/models';
 
 const dbUrl = process.env.SQL_DB_URL ?? '';
 
@@ -15,6 +16,8 @@ const sequelize = new Sequelize(dbUrl, {
   }
 });
 
+const db: any = {};
+
 sequelize
   .authenticate()
   .then(() => {
@@ -24,9 +27,36 @@ sequelize
     console.error(err);
   });
 
-const db = {
-  sequelize,
-  Sequelize
-};
+const modulesModels: any[] = [ProfileModels];
+
+modulesModels.forEach(moduleModels => {
+  try {
+    Object.values(moduleModels).forEach((model: any) => {
+      const modelInstance = model(sequelize, DataTypes);
+      db[modelInstance.name] = modelInstance;
+    });
+  } catch (err) {
+    console.error(`An error occurred while loading models`);
+    console.error(err);
+    throw err;
+  }
+});
+
+Object.keys(db).forEach(modelName => {
+  try {
+    if (db[modelName].associate) {
+      db[modelName].associate(db);
+    }
+  } catch (err) {
+    console.error(`An error occurred while associating models. Model is ${modelName}`);
+    console.error(err);
+    throw err;
+  }
+});
+
+sequelize.sync({ logging: false });
+
+db.sequelize = sequelize;
+db.Sequelize = Sequelize;
 
 export default db;

@@ -1,9 +1,8 @@
-import express, { Application, Request, Response, NextFunction } from 'express';
+import express, { Request, Response, NextFunction } from 'express';
 import dotenv from 'dotenv';
-import ProfileRoutes from './src/profile/route';
-
 dotenv.config();
 
+import ProfileRoutes from './src/profile/route';
 import './src/libs/sequelize';
 
 const app = express();

@@ -1,5 +1,8 @@
+import models from '../../libs/sequelize';
+
+const { profile: Profile } = models;
 export class ProfileRepository {
   async getById(id: number) {
-    return Promise.resolve(`Profile is ${id}`);
+    return Profile.findOne({ where: { id } });
   }
 }
