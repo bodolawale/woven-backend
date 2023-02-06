@@ -9,6 +9,7 @@ import ProfileController from './src/profile/controllers';
 import ProfileRoutes from './src/profile/route';
 import ContractRoutes from './src/contract/route';
 import JobRoutes from './src/job/route';
+import AdminRoutes from './src/admin/route';
 import { catchAsync } from './src/utils/error-service';
 
 const app = express();
@@ -17,6 +18,7 @@ app.use(express.json());
 app.use('/api/profiles', ProfileRoutes);
 app.use('/api/contracts', ContractRoutes);
 app.use('/api/jobs', JobRoutes);
+app.use('/api/admin', AdminRoutes);
 
 // balances route??
 // why userId and not a authenticate route?

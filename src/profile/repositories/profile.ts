@@ -22,12 +22,12 @@ export class ProfileRepository {
   }
 
   async deposit(callerId: number, amountToDeposit: number): Promise<void> {
-    const totalJobs = await Job.findAll({
+    const totalJobModels = await Job.findAll({
       where: { client_id: callerId, payment_status_id: PAYMENT_STATUS.UNPAID },
       attributes: ['client_id', [sequelize.fn('sum', sequelize.col('amount')), 'total_amount']],
-      group: ['client_id'],
-      raw: true
+      group: ['client_id']
     });
+    const totalJobs = safeToJson(totalJobModels);
     // to be fair, I don't understand the idea behind this requirement
     const totalJobAmount: number = parseInt(totalJobs[0]?.total_amount, 10) ?? 0;
     const percentageOfTotalJobs = (25 / 100) * totalJobAmount;
