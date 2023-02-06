@@ -15,7 +15,7 @@ export async function getBestProfession(req: AuthenticatedRequest, res: Response
 
   const data = await adminService.getBestProfession(start, end);
 
-  return res.status(200).send({ message: 'Admin fetched successfully', data });
+  return res.status(200).send({ message: 'Best profession fetched successfully', data });
 }
 
 export async function getBestClients(req: AuthenticatedRequest, res: Response) {
@@ -29,5 +29,5 @@ export async function getBestClients(req: AuthenticatedRequest, res: Response) {
 
   const data = await adminService.getBestClients(start, end, limit);
 
-  return res.status(200).send({ message: 'Amount deposited successfully', data });
+  return res.status(200).send({ message: 'Best clients successfully', data });
 }

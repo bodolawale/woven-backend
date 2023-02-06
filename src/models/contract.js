@@ -1,4 +1,4 @@
-const { CONTRACT_STATUSES } = require('../consts');
+const { CONTRACT_STATUSES } = require('../contract/consts');
 
 module.exports = function (sequelize, DataTypes) {
   const Contract = sequelize.define(

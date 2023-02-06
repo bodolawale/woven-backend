@@ -1,4 +1,4 @@
-const { PAYMENT_STATUS } = require('../consts');
+const { PAYMENT_STATUS } = require('../job/consts');
 
 module.exports = function (sequelize, DataTypes) {
   const Job = sequelize.define(
