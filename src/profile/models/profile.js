@@ -25,6 +25,11 @@ module.exports = function (sequelize, DataTypes) {
       },
       password_hash: {
         type: DataTypes.TEXT
+      },
+      balance: {
+        type: DataTypes.INTEGER,
+        allowNull: false,
+        defaultValue: 0
       }
     },
     {

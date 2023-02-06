@@ -9,6 +9,7 @@ export type ProfileData = {
   email: string;
   profile_type_id: number;
   password_hash: string | null;
+  balance: number;
   created_at: Date;
   updated_at: Date;
 };

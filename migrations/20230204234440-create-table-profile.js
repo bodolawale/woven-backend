@@ -57,6 +57,11 @@ async function createProfileTable(queryInterface, DataTypes, transaction) {
       password_hash: {
         type: DataTypes.TEXT
       },
+      balance: {
+        type: DataTypes.INTEGER,
+        allowNull: false,
+        defaultValue: 0
+      },
       created_at: {
         type: DataTypes.DATE,
         allowNull: false,
