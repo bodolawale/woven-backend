@@ -1,3 +1,5 @@
+const { CONTRACT_STATUSES } = require('../consts');
+
 module.exports = function (sequelize, DataTypes) {
   const Contract = sequelize.define(
     'contract',
@@ -10,7 +12,7 @@ module.exports = function (sequelize, DataTypes) {
       status_id: {
         type: DataTypes.INTEGER,
         allowNull: false,
-        defaultValue: 1
+        defaultValue: CONTRACT_STATUSES.NEW
       },
       client_id: {
         type: DataTypes.INTEGER,

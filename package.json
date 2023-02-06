@@ -9,8 +9,10 @@
     "migration:generate": "npx sequelize-cli migration:generate --name",
     "migration:run": "npx sequelize-cli db:migrate",
     "migration:undo": "npx sequelize-cli db:migrate:undo",
+    "seed:generate": "npx sequelize-cli seed:generate --name",
     "seed:all": "npx sequelize-cli db:seed:all",
     "seed:undo": "npx sequelize-cli db:seed:undo",
+    "prepare-db": "npm run migration:run && npm run seed:all",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "Isaac Olawale",
