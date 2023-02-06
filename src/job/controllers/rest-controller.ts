@@ -12,3 +12,15 @@ export async function getUnpaidJobs(req: AuthenticatedRequest, res: Response) {
 
   return res.status(200).send({ message: 'Jobs fetched successfully', data });
 }
+
+export async function pay(req: AuthenticatedRequest, res: Response) {
+  const callerId = req.user.id;
+  const { amountToPay } = req.body;
+
+  const requestId = req.params.job_id;
+  const jobId = parseInt(requestId, 10);
+
+  await jobService.pay(jobId, callerId, amountToPay);
+
+  return res.status(200).send({ message: 'Payment made successfully' });
+}

@@ -12,4 +12,7 @@ export class JobService {
   async getUnpaidJobs(callerId: number) {
     return this.jobRepository.getUnpaidJobs(callerId);
   }
+  async pay(jobId: number, callerId: number, amountToPay: number) {
+    return this.jobRepository.pay(jobId, callerId, amountToPay);
+  }
 }
