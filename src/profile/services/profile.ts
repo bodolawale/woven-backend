@@ -12,4 +12,8 @@ export class ProfileService {
   async getProfileById(id: number) {
     return this.profileRepository.getById(id);
   }
+
+  async deposit(callerId: number, amountToDeposit: number) {
+    return this.profileRepository.deposit(callerId, amountToDeposit);
+  }
 }
