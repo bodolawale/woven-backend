@@ -1,5 +1,5 @@
 /* eslint-disable import/first */
-import express, { Request, Response, NextFunction } from 'express';
+import express, { Request, Response } from 'express';
 import dotenv from 'dotenv';
 
 dotenv.config();
@@ -26,16 +26,16 @@ app.use('/api/admin', AdminRoutes);
 // why userId and not a authenticate route?
 app.post('/api/balances/deposit/:userId', catchAsync(ProfileController.deposit));
 
-function errorHandler(err: any, req: Request, res: Response, next: NextFunction) {
-  res.status(400).send({
+function errorHandler(err: any, req: Request, res: Response) {
+  return res.status(400).send({
     message: 'An error occurred while processing this request',
     data: err.toString(),
     stackTrace: err.stack
   });
 }
 
-function error404(req: Request, res: Response, next: NextFunction) {
-  res.status(404).send({
+function error404(req: Request, res: Response) {
+  return res.status(404).send({
     success: false,
     message: 'Invalid URL'
   });
