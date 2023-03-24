@@ -1,7 +1,7 @@
-import { AuthenticatedRequest } from './../../utils/types';
+import { Response } from 'express';
+import { AuthenticatedRequest } from '../../utils/types';
 import { AdminService } from '../services';
 import { AdminRepository } from '../repositories';
-import { Response } from 'express';
 
 const adminRepository = new AdminRepository();
 const adminService = new AdminService({ adminRepository });

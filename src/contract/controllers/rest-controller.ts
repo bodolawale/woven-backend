@@ -1,7 +1,7 @@
-import { AuthenticatedRequest } from './../../utils/types';
+import { Response } from 'express';
+import { AuthenticatedRequest } from '../../utils/types';
 import { ContractService } from '../services/contract';
 import { ContractRepository } from '../repositories/contract';
-import { Response } from 'express';
 
 const contractRepository = new ContractRepository();
 const contractService = new ContractService({ contractRepository });

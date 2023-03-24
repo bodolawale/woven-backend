@@ -1,17 +1,20 @@
-import { ContractRepository } from './../repositories';
+import { ContractRepository } from '../repositories';
 
-type config = {
+type ContractServiceConfig = {
   contractRepository: ContractRepository;
 };
 
 export class ContractService {
   private readonly contractRepository: ContractRepository;
-  constructor(config: config) {
+
+  constructor(config: ContractServiceConfig) {
     this.contractRepository = config.contractRepository;
   }
+
   async getCallerContractById(id: number, callerId: number) {
     return this.contractRepository.getCallerContractById(id, callerId);
   }
+
   async getContracts(callerId: number) {
     return this.contractRepository.getContracts(callerId);
   }

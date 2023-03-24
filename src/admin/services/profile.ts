@@ -1,14 +1,16 @@
-import { AdminRepository } from './../repositories';
+import { AdminRepository } from '../repositories';
 
-type config = {
+type AdminServiceConfig = {
   adminRepository: AdminRepository;
 };
 
 export class AdminService {
   private readonly adminRepository: AdminRepository;
-  constructor(config: config) {
+
+  constructor(config: AdminServiceConfig) {
     this.adminRepository = config.adminRepository;
   }
+
   async getBestProfession(start: Date, end: Date) {
     return this.adminRepository.getBestProfession(start, end);
   }

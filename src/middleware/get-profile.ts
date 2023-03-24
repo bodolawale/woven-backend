@@ -1,4 +1,3 @@
-import { AuthenticatedRequest } from './../utils/types';
 import { NextFunction, Response } from 'express';
 import { ProfileRepository } from '../profile/repositories';
 

@@ -3,7 +3,7 @@ import models from '../models';
 
 const dbUrl = process.env.SQL_DB_URL ?? '';
 
-const isSequelizeLoggingEnabled = !!process.env.SQL_DB_LOG ? console.log : false;
+const isSequelizeLoggingEnabled = process.env.SQL_DB_LOG ? console.log : false;
 const isSSLEnabled = !!process.env.DB_ENABLE_SSL;
 
 const sequelize = new Sequelize(dbUrl, {

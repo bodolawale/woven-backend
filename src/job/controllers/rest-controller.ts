@@ -1,7 +1,7 @@
-import { AuthenticatedRequest } from './../../utils/types';
+import { Response } from 'express';
+import { AuthenticatedRequest } from '../../utils/types';
 import { JobService } from '../services/job';
 import { JobRepository } from '../repositories/job';
-import { Response } from 'express';
 
 const jobRepository = new JobRepository();
 const jobService = new JobService({ jobRepository });

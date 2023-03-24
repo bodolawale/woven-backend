@@ -1,5 +1,7 @@
+/* eslint-disable import/first */
 import express, { Request, Response, NextFunction } from 'express';
 import dotenv from 'dotenv';
+
 dotenv.config();
 
 import './src/libs/sequelize';

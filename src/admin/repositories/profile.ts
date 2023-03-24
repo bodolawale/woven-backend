@@ -1,8 +1,9 @@
-import { safeToJson } from './../../libs/sequelize-utils';
 import { Op } from 'sequelize';
-import { PAYMENT_STATUS } from './../../job/consts';
+import { safeToJson } from '../../libs/sequelize-utils';
+import { PAYMENT_STATUS } from '../../job/consts';
 import models from '../../libs/sequelize';
 import { ProfileData } from '../../profile/repositories';
+
 const { profile: Profile, job: Job, sequelize } = models;
 
 export class AdminRepository {

@@ -1,3 +1,4 @@
+// eslint-disable-next-line no-underscore-dangle
 function _safeToJson(entity) {
   return entity && entity.toJSON ? entity.toJSON() : entity;
 }

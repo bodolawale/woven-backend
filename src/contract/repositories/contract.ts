@@ -1,5 +1,5 @@
-import { CONTRACT_STATUSES } from './../consts';
 import { Op } from 'sequelize';
+import { CONTRACT_STATUSES } from '../consts';
 import models from '../../libs/sequelize';
 import { safeToJson } from '../../libs/sequelize-utils';
 

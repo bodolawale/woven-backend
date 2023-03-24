@@ -1,14 +1,16 @@
-import { ProfileRepository } from './../repositories';
+import { ProfileRepository } from '../repositories';
 
-type config = {
+type ProfileServiceConfig = {
   profileRepository: ProfileRepository;
 };
 
 export class ProfileService {
   private readonly profileRepository: ProfileRepository;
-  constructor(config: config) {
+
+  constructor(config: ProfileServiceConfig) {
     this.profileRepository = config.profileRepository;
   }
+
   async getProfileById(id: number) {
     return this.profileRepository.getById(id);
   }

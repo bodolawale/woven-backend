@@ -1,5 +1,5 @@
-import { PAYMENT_STATUS } from './../../job/consts';
-import { safeToJson } from './../../libs/sequelize-utils';
+import { PAYMENT_STATUS } from '../../job/consts';
+import { safeToJson } from '../../libs/sequelize-utils';
 import models from '../../libs/sequelize';
 
 const { profile: Profile, job: Job, sequelize } = models;

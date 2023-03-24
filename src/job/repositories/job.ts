@@ -1,7 +1,7 @@
-import { PAYMENT_STATUS } from './../consts';
-import { CONTRACT_STATUSES } from './../../contract/consts';
-import { safeToJson } from './../../libs/sequelize-utils';
 import { Op } from 'sequelize';
+import { PAYMENT_STATUS } from '../consts';
+import { CONTRACT_STATUSES } from '../../contract/consts';
+import { safeToJson } from '../../libs/sequelize-utils';
 import models from '../../libs/sequelize';
 
 const {

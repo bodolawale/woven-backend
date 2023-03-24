@@ -1,4 +1,5 @@
 const Sequelize = require('sequelize');
+
 const { Op } = Sequelize;
 
 const clients = [

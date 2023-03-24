@@ -1,7 +1,7 @@
-import { AuthenticatedRequest } from './../../utils/types';
+import { Request, Response } from 'express';
+import { AuthenticatedRequest } from '../../utils/types';
 import { ProfileService } from '../services/profile';
 import { ProfileRepository } from '../repositories/profile';
-import { Request, Response } from 'express';
 
 const profileRepository = new ProfileRepository();
 const profileService = new ProfileService({ profileRepository });
