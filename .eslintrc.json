@@ -26,6 +26,12 @@
                 "no-underscore-dangle": "off",
                 "@typescript-eslint/default-param-last": "off"
             }
+        },
+        {
+            "files": ["test/**/*.ts"],
+            "rules": {
+                "@typescript-eslint/no-unused-expressions": "off"
+            }
         }
     ],
     "plugins": ["node"],
