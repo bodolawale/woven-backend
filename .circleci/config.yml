@@ -19,7 +19,7 @@ jobs:
       - checkout
       - node/install-packages:
           pkg-manager: npm
-          node-version: '18.14.0'
+          version: '18.14.0'
       - run:
           name: run lint check
           command: npm rum lint
