@@ -15,7 +15,7 @@
     "prepare-db": "npm run migration:run && npm run seed:all",
     "test": "echo \"Error: no test specified\" && exit 1",
     "test:unit": "NODE_ENV=test mocha --require ts-node/register --exit 'test/unit/**/*.ts'",
-    "test:unit:deploy": "NODE_ENV=test mocha --require ts-node/register --reporter mocha-junit-reporter --reporter-options mochaFile=test-results.xml --exit 'test/unit/**/*.ts'",
+    "test:unit:deploy": "NODE_ENV=test mocha --require ts-node/register --reporter mocha-junit-reporter --reporter-options toConsole=true --exit 'test/unit/**/*.ts'",
     "lint": "eslint ."
   },
   "author": "Isaac Olawale",
