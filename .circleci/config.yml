@@ -46,7 +46,8 @@ jobs:
       - run:
           name: run unit tests
           command: npm run test:unit
-      - store_test_results
+      - store_test_path:
+          path: test-results
 workflows:
   say-hello-workflow:
     jobs:
@@ -66,7 +67,6 @@ workflows:
               ignore:
                 - main
                 - dev
-
       - unit-test-check:
           filters:
             branches:
