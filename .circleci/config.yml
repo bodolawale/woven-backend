@@ -1,5 +1,8 @@
 version: 2.1
 
+orbs:
+  node: circleci/node@5.1.0
+
 jobs:
   say-hello:
     docker:
@@ -9,9 +12,23 @@ jobs:
       - run:
           name: 'Say hello'
           command: 'echo Hello, World!'
+
+  type-lint-check:
+    executor: node/default
+    steps:
+      - checkout
+      - node/install-packages:
+          pkg-manager: npm
+          node-version: '18.14.0'
       - run:
-          name: 'Say docker hub username'
-          command: 'echo $DOCKER_HUB_USERNAME'
+          name: run lint check
+          command: npm rum lint
+      - run:
+          name: say npm version
+          command: npm -v
+      - run:
+          name: say node version
+          command: node -v
 
 # Orchestrate jobs using workflows
 # See: https://circleci.com/docs/configuration-reference/#workflows
@@ -21,3 +38,12 @@ workflows:
       - say-hello:
           context:
             - docker-cloud-cred
+          filters:
+            - main
+            - staging
+  sanity-check:
+    jobs:
+      - type-lint-check:
+          filters:
+            - main
+            - staging
