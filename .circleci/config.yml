@@ -14,12 +14,12 @@ jobs:
           command: 'echo Hello, World!'
 
   type-lint-check:
-    executor: node/default
+    executor:
+      name: node/default
+      tag: '18.14.0'
     steps:
       - checkout
       - node/install-packages:
-          version: '18.4.0'
-          pkg-manager: npm
       - run:
           name: run lint check
           command: npm rum lint
