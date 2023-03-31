@@ -1,5 +1,5 @@
 {
-  "name": "woven-test",
+  "name": "woven-backend",
   "version": "1.0.0",
   "description": "Backend Assessment",
   "main": "main.ts",
