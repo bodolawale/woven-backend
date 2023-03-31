@@ -30,8 +30,14 @@ jobs:
           name: say node version
           command: node -v
 
-# Orchestrate jobs using workflows
-# See: https://circleci.com/docs/configuration-reference/#workflows
+  unit-test-check:
+    executor: node/default
+    steps:
+      - checkout
+      - run:
+          name: run unit tests
+          command: npm run test:unit
+
 workflows:
   say-hello-workflow:
     jobs:
@@ -46,6 +52,13 @@ workflows:
   sanity-check:
     jobs:
       - type-lint-check:
+          filters:
+            branches:
+              ignore:
+                - main
+                - dev
+
+      - unit-test-check:
           filters:
             branches:
               ignore:
