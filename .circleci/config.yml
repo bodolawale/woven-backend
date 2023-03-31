@@ -39,11 +39,15 @@ workflows:
           context:
             - docker-cloud-cred
           filters:
-            - main
-            - staging
+            branches:
+              ignore:
+                - main
+                - dev
   sanity-check:
     jobs:
       - type-lint-check:
           filters:
-            - main
-            - staging
+            branches:
+              ignore:
+                - main
+                - dev
