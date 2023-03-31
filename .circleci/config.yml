@@ -46,7 +46,7 @@ jobs:
       - run:
           name: run unit tests
           command: npm run test:unit
-      - store_test_path:
+      - store_test_results:
           path: test-results
 workflows:
   say-hello-workflow:
