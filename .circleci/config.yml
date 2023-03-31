@@ -59,6 +59,7 @@ workflows:
                 - dev
 
       - unit-test-check:
+          requires: type-lint-check
           filters:
             branches:
               ignore:
