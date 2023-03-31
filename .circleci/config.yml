@@ -20,6 +20,9 @@ jobs:
       - node/install:
           node-version: '18.14.0'
       - run:
+          name: install npm packages
+          command: npm install
+      - run:
           name: run lint check
           command: npm rum lint
       - run:
