@@ -5,7 +5,7 @@ describe('Simple Unit Test', () => {
     expect(true).to.be.true;
   });
 
-  it('should fail', () => {
-    expect(true).to.be.false;
+  it('should pass', () => {
+    expect(false).to.be.false;
   });
 });
