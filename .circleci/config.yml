@@ -19,7 +19,7 @@ jobs:
       tag: '18.14.0'
     steps:
       - checkout
-      - node/install-packages:
+      - node/install-packages
       - run:
           name: run lint check
           command: npm rum lint
