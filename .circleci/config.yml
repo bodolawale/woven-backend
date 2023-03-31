@@ -31,9 +31,12 @@ jobs:
           command: node -v
 
   unit-test-check:
-    executor: node/default
+    executor:
+      name: node/default
+      tag: '18.14.0'
     steps:
       - checkout
+      - node/install-packages
       - run:
           name: say npm version
           command: npm -v
