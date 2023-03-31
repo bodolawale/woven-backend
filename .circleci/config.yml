@@ -15,11 +15,11 @@ jobs:
 
   type-lint-check:
     executor: node/default
+    parameters:
+      pkg-manager: npm
+      version: '18.14.0'
     steps:
       - checkout
-      - node/install-packages:
-          pkg-manager: npm
-          version: '18.14.0'
       - run:
           name: run lint check
           command: npm rum lint
