@@ -15,6 +15,7 @@
     "prepare-db": "npm run migration:run && npm run seed:all",
     "test": "echo \"Error: no test specified\" && exit 1",
     "test:unit": "NODE_ENV=test mocha --require ts-node/register --exit 'test/unit/**/*.ts'",
+    "test:unit:deploy": "NODE_ENV=test mocha --require ts-node/register --reporter mocha-junit-reporter --reporter-options mochaFile=test-results.xml --exit 'test/unit/**/*.ts'",
     "lint": "eslint ."
   },
   "author": "Isaac Olawale",
@@ -36,6 +37,7 @@
     "eslint-plugin-prettier": "^4.2.1",
     "eslint-plugin-promise": "^6.1.1",
     "mocha": "^10.2.0",
+    "mocha-junit-reporter": "^2.2.0",
     "prettier": "^2.8.3",
     "sequelize-cli": "^6.6.0",
     "ts-node": "^10.9.1",

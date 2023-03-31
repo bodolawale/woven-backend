@@ -45,7 +45,7 @@ jobs:
           command: node -v
       - run:
           name: run unit tests
-          command: npm run test:unit
+          command: npm run test:unit:deploy
       - store_test_results:
           path: test-results
 workflows:
